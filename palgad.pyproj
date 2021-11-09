@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5999c56c-76a6-4a61-9768-5b82a93167db</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>palgad.py</StartupFile>
+    <StartupFile>Reg_Aut.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
