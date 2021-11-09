@@ -3,18 +3,33 @@ log_list=['A','B','C'] #login
 pass_list=[''] #password
 
 
-def login(n: str, l: list):
-    """Sisestatud nimi otsing
+def login(l:list, p:list):
+    n=input('Sisesta oma kasutaja nimi autoriseerimiseks: ')
+    #t=login(n,l) 
+    print(l)
+    while n not in l:
+        print('Here')
+        n=input('Sisesta veel kord oma nimi: ')
+    #while t!=True:
+    #    print(t)
+    #    n=input('Sisesta veel kord oma nimi: ')
+    else:
+        pass
 
-    Tagastab olemasolek järjendis bool formaadis
+#def login(l: list):
+#    """Sisestatud nimi otsing
 
-    :param str n:otsitav nimi
-    :rtype: bool
+#    Tagastab olemasolek järjendis bool formaadis
 
-    """
-    if n in l:
-        t=true
-    return t
+#    :param str n:otsitav nimi
+#    :rtype: bool
+
+#    """
+#    n=(input('Sisesta oma nimi: '))
+#    t=0
+#    if n in log_list:
+#        t=true
+#    return t
 
 
 def ise_reg():
@@ -44,9 +59,13 @@ def auto_reg():
     return pas
 
 
-def avtor():
-    return a
-
+def avtor(l:list, p:list):
+    n=input('Sisesta oma kasutaja nimi autoriseerimiseks: ')
+    t=login(n,l)
+    while t!=True:
+        n=input('Sisesta veel kord oma nimi: ')
+    else:
+        pass
 
 
 def reg(v: str, l: list, p: list):
@@ -68,13 +87,14 @@ def reg(v: str, l: list, p: list):
     return l,p
 
 while 1:
-    print('Registreerimine, autoriseerimine või välja: a või v')
+    print('Registreerimine, autoriseerimine, registreerimine või välja: "a", "r" või "v"')
     v=input('Sinu valik: ')
     if v=='a':
-        reg(input('Auto või ise?'))
-    elif v=='a':
-        t=avtor()#True, False
-        if avtor(login,password):
+        t=login(log_list, pass_list)
+        #reg(input('Auto või ise?'))
+    elif v=='r':
+        t=avtor(log_list, pas_list)#True, False
+        if t:
             print('Tere tulemast')
         else: v=input('Kas tahad registreerida?')
         if v=='jah':
